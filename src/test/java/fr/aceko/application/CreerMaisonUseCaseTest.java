@@ -1,5 +1,6 @@
 package fr.aceko.application;
 
+import fr.aceko.AppConfig;
 import fr.aceko.application.maison.CreerMaisonRequester;
 import fr.aceko.application.maison.CreerMaisonUseCase;
 import fr.aceko.application.maison.MaisonAlreadyExistException;
@@ -8,7 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,7 +20,7 @@ class CreerMaisonUseCaseTest {
 
     @BeforeEach
     void setUpAll(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-conf.xml");
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         useCase = context.getBean(CreerMaisonUseCase.class);
         maisonDao = context.getBean(MaisonDao.class);
     }

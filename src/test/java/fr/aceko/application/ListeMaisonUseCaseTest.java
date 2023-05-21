@@ -1,5 +1,6 @@
 package fr.aceko.application;
 
+import fr.aceko.AppConfig;
 import fr.aceko.UseCaseFactory;
 import fr.aceko.application.maison.ListeMaisonUseCase;
 import fr.aceko.domain.Maison;
@@ -8,7 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,7 +19,7 @@ class ListeMaisonUseCaseTest {
 
     @BeforeEach
     void setUp(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-conf.xml");
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         maisonDao = context.getBean(MaisonDao.class);
     }
     @AfterEach
