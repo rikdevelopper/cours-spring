@@ -7,22 +7,21 @@ import java.util.Scanner;
 
 /**
  * Hello world!
- *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println( "*********************ACEKO location de maisons*******************" );
+        System.out.println("*********************ACEKO location de maisons*******************");
         int choix = -1;
-        while (choix != 0){
-            System.out.println( "Pour créer une maison entrez 1" );
-            System.out.println( "Pour reserver une maison entrez 2" );
-            System.out.println( "Pour quitter l'application entrez 0" );
+        while (choix != 0) {
+            System.out.println("Pour créer une maison entrez 1");
+            System.out.println("Pour reserver une maison entrez 2");
+            System.out.println("Pour quitter l'application entrez 0");
             choix = scanner.nextInt();
-            if(choix == 1) new CreerMaisonUI().afficherCreerMaison();
-            if(choix == 2) new ReserverMaisonUI().afficherFormulaireReservation();
+            if (choix == 1) new CreerMaisonUI(UseCaseFactory.creerMaisonUseCase()).afficherCreerMaison();
+            if (choix == 2)
+                new ReserverMaisonUI(UseCaseFactory.listeMaisonUseCase(), UseCaseFactory.reserverMaisonUseCase())
+                        .afficherFormulaireReservation();
         }
     }
 }

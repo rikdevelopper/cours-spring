@@ -1,6 +1,5 @@
 package fr.aceko.ui;
 
-import fr.aceko.UseCaseFactory;
 import fr.aceko.application.BasicUseCaseResponse;
 import fr.aceko.application.maison.ListeMaisonUseCase;
 import fr.aceko.application.reservation.ReserverMaisonRequest;
@@ -17,10 +16,10 @@ public class ReserverMaisonUI {
     private final Scanner scanner;
     private final ReservationViewModel viewModel;
 
-    public ReserverMaisonUI() {
+    public ReserverMaisonUI(ListeMaisonUseCase listeMaisonUseCase, ReserverMaisonUseCase reserverMaisonUseCase) {
         this.scanner = new Scanner(System.in);
-        this.listeMaisonUseCase = UseCaseFactory.listeMaisonUseCase();
-        this.reserverMaisonUseCase = UseCaseFactory.reserverMaisonUseCase();
+        this.listeMaisonUseCase = listeMaisonUseCase;
+        this.reserverMaisonUseCase = reserverMaisonUseCase;
         this.viewModel = new ReservationViewModel();
     }
 

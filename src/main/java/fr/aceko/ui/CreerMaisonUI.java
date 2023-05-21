@@ -1,6 +1,5 @@
 package fr.aceko.ui;
 
-import fr.aceko.UseCaseFactory;
 import fr.aceko.application.maison.CreerMaisonRequester;
 import fr.aceko.application.maison.CreerMaisonUseCase;
 import fr.aceko.application.maison.MaisonAlreadyExistException;
@@ -12,10 +11,10 @@ public class CreerMaisonUI {
     private final Scanner scanner;
     private final MaisonViewModel viewModel;
     private final CreerMaisonUseCase creerMaisonUseCase;
-    public CreerMaisonUI() {
+    public CreerMaisonUI(CreerMaisonUseCase creerMaisonUseCase) {
         this.scanner =  new Scanner(System.in);
         this.viewModel = new MaisonViewModel();
-        this.creerMaisonUseCase = UseCaseFactory.creerMaisonUseCase();
+        this.creerMaisonUseCase = creerMaisonUseCase;
     }
 
     public void afficherCreerMaison() {
