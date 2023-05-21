@@ -1,9 +1,11 @@
 package fr.aceko.application;
 
 
+import fr.aceko.DaoFactory;
+import fr.aceko.UseCaseFactory;
 import fr.aceko.application.maison.ListeMaisonUseCase;
 import fr.aceko.domain.Maison;
-import fr.aceko.infrastructure.MaisonDao;
+import fr.aceko.domain.MaisonDao;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ListeMaisonUseCaseTest {
 
-    private final MaisonDao maisonDao = new MaisonDao();
+    private final MaisonDao maisonDao = DaoFactory.maisonDao();
     @AfterEach
     void tearDown(){
         maisonDao.clear();
@@ -26,7 +28,7 @@ class ListeMaisonUseCaseTest {
         maisonDao.createMaison(maison1);
         maisonDao.createMaison(maison2);
 
-        ListeMaisonUseCase listeMaisonUseCase = new ListeMaisonUseCase();
+        ListeMaisonUseCase listeMaisonUseCase = UseCaseFactory.listeMaisonUseCase();
         assertEquals(sizeBeforeCreate + 2, listeMaisonUseCase.listMaison().size());
     }
 }

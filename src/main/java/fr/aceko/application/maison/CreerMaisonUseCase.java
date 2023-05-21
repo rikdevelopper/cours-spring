@@ -2,14 +2,14 @@ package fr.aceko.application.maison;
 
 
 import fr.aceko.domain.Maison;
-import fr.aceko.infrastructure.MaisonDao;
+import fr.aceko.domain.MaisonDao;
 
 public class CreerMaisonUseCase {
 
     private final MaisonDao maisonDao;
 
-    public CreerMaisonUseCase() {
-        this.maisonDao = new MaisonDao();
+    public CreerMaisonUseCase(MaisonDao maisonDao) {
+        this.maisonDao = maisonDao;
     }
 
 

@@ -2,15 +2,16 @@ package fr.aceko.infrastructure;
 
 
 import fr.aceko.domain.Maison;
+import fr.aceko.domain.MaisonDao;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class MaisonDaoTest {
+class InMemoryMaisonDaoTest {
 
     @Test
     void listAll() {
-        MaisonDao maisonDao = new MaisonDao();
+        MaisonDao maisonDao = new InMemoryMaisonDao();
         Maison maison1 =new Maison("Maison1", 2000, "ADRESSE");
         Maison maison2 =new Maison("Maison2", 2000, "ADRESSE");
         maisonDao.createMaison(maison1);

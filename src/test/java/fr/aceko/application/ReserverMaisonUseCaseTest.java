@@ -1,11 +1,12 @@
 package fr.aceko.application;
 
 
+import fr.aceko.DaoFactory;
+import fr.aceko.UseCaseFactory;
 import fr.aceko.application.reservation.ReserverMaisonRequest;
 import fr.aceko.application.reservation.ReserverMaisonUseCase;
 import fr.aceko.domain.Maison;
-import fr.aceko.domain.UnavailableHouseException;
-import fr.aceko.infrastructure.MaisonDao;
+import fr.aceko.domain.MaisonDao;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ReserverMaisonUseCaseTest {
-    private final MaisonDao maisonDao = new MaisonDao();
-    private final ReserverMaisonUseCase reserverMaisonUseCase = new ReserverMaisonUseCase();
+    private final MaisonDao maisonDao = DaoFactory.maisonDao();
+    private final ReserverMaisonUseCase reserverMaisonUseCase = UseCaseFactory.reserverMaisonUseCase();
     private Maison maison;
 
     @BeforeEach

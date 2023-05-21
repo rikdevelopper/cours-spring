@@ -1,19 +1,15 @@
 package fr.aceko.application.reservation;
 
 import fr.aceko.application.BasicUseCaseResponse;
-import fr.aceko.domain.Client;
-import fr.aceko.domain.Maison;
-import fr.aceko.domain.UnavailableHouseException;
-import fr.aceko.infrastructure.ClientDao;
-import fr.aceko.infrastructure.MaisonDao;
+import fr.aceko.domain.*;
 
 public class ReserverMaisonUseCase {
     private final MaisonDao maisonDao;
     private final ClientDao clientDao;
 
-    public ReserverMaisonUseCase() {
-        this.maisonDao = new MaisonDao();
-        this.clientDao = new ClientDao();
+    public ReserverMaisonUseCase(MaisonDao maisonDao, ClientDao clientDao) {
+        this.maisonDao = maisonDao;
+        this.clientDao = clientDao;
     }
 
     public BasicUseCaseResponse reserverMaison(ReserverMaisonRequest request) {
