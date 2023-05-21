@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="creerMaisonUI" class="fr.aceko.ui.CreerMaisonUI">
+        <constructor-arg ref="creerMaisonUseCase" name="creerMaisonUseCase"/>
+    </bean>
+    <bean id="reserverMaisonUI" class="fr.aceko.ui.ReserverMaisonUI">
+        <constructor-arg ref="listeMaisonUseCase" name="listeMaisonUseCase"/>
+        <constructor-arg ref="reserverMaisonUseCase" name="reserverMaisonUseCase"/>
+    </bean>
+</beans>

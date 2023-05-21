@@ -2,6 +2,8 @@ package fr.aceko;
 
 import fr.aceko.ui.CreerMaisonUI;
 import fr.aceko.ui.ReserverMaisonUI;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Scanner;
 
@@ -10,6 +12,7 @@ import java.util.Scanner;
  */
 public class App {
     public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-conf.xml");
         Scanner scanner = new Scanner(System.in);
         System.out.println("*********************ACEKO location de maisons*******************");
         int choix = -1;
@@ -18,10 +21,9 @@ public class App {
             System.out.println("Pour reserver une maison entrez 2");
             System.out.println("Pour quitter l'application entrez 0");
             choix = scanner.nextInt();
-            if (choix == 1) new CreerMaisonUI(UseCaseFactory.creerMaisonUseCase()).afficherCreerMaison();
+            if (choix == 1) context.getBean("creerMaisonUI", CreerMaisonUI.class).afficherCreerMaison();
             if (choix == 2)
-                new ReserverMaisonUI(UseCaseFactory.listeMaisonUseCase(), UseCaseFactory.reserverMaisonUseCase())
-                        .afficherFormulaireReservation();
+                context.getBean("reserverMaisonUI", ReserverMaisonUI.class).afficherFormulaireReservation();
         }
     }
 }

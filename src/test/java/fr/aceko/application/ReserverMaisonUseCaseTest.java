@@ -1,8 +1,5 @@
 package fr.aceko.application;
 
-
-import fr.aceko.DaoFactory;
-import fr.aceko.UseCaseFactory;
 import fr.aceko.application.reservation.ReserverMaisonRequest;
 import fr.aceko.application.reservation.ReserverMaisonUseCase;
 import fr.aceko.domain.Maison;
@@ -10,6 +7,8 @@ import fr.aceko.domain.MaisonDao;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.time.LocalDate;
 
@@ -17,12 +16,15 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ReserverMaisonUseCaseTest {
-    private final MaisonDao maisonDao = DaoFactory.maisonDao();
-    private final ReserverMaisonUseCase reserverMaisonUseCase = UseCaseFactory.reserverMaisonUseCase();
+    private MaisonDao maisonDao;
+    private ReserverMaisonUseCase reserverMaisonUseCase;
     private Maison maison;
 
     @BeforeEach
     void setUp() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-conf.xml");
+        maisonDao = context.getBean(MaisonDao.class);
+        reserverMaisonUseCase = context.getBean(ReserverMaisonUseCase.class);
         maison = new Maison("AGBEDOUPE", 2000, "Adidogome");
         maisonDao.createMaison(maison);
     }
