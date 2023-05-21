@@ -3,7 +3,9 @@ package fr.aceko.application.maison;
 
 import fr.aceko.domain.Maison;
 import fr.aceko.domain.MaisonDao;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CreerMaisonUseCase {
 
     private final MaisonDao maisonDao;

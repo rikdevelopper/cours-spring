@@ -1,5 +1,6 @@
 package fr.aceko.domain;
 
+
 import java.util.Set;
 
 public interface MaisonDao {

@@ -19,7 +19,7 @@ class ListeMaisonUseCaseTest {
     @BeforeEach
     void setUp(){
         ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-conf.xml");
-        maisonDao = context.getBean("maisonDao", MaisonDao.class);
+        maisonDao = context.getBean(MaisonDao.class);
     }
     @AfterEach
     void tearDown(){

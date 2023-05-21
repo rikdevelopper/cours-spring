@@ -4,11 +4,13 @@ import fr.aceko.application.BasicUseCaseResponse;
 import fr.aceko.application.maison.ListeMaisonUseCase;
 import fr.aceko.application.reservation.ReserverMaisonRequest;
 import fr.aceko.application.reservation.ReserverMaisonUseCase;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+@Component
 public class ReserverMaisonUI {
 
     private final ListeMaisonUseCase listeMaisonUseCase;

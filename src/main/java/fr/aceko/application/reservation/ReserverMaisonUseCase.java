@@ -2,7 +2,9 @@ package fr.aceko.application.reservation;
 
 import fr.aceko.application.BasicUseCaseResponse;
 import fr.aceko.domain.*;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ReserverMaisonUseCase {
     private final MaisonDao maisonDao;
     private final ClientDao clientDao;

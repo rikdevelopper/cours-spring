@@ -19,9 +19,9 @@ class CreerMaisonUseCaseTest {
 
     @BeforeEach
     void setUpAll(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-dao.xml", "spring/spring-uc.xml");
-        useCase = context.getBean("creerMaisonUseCase", CreerMaisonUseCase.class);
-        maisonDao = context.getBean("maisonDao", MaisonDao.class);
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring/spring-conf.xml");
+        useCase = context.getBean(CreerMaisonUseCase.class);
+        maisonDao = context.getBean(MaisonDao.class);
     }
     @AfterEach
     void tearDown(){

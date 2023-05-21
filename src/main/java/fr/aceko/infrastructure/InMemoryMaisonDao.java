@@ -2,10 +2,12 @@ package fr.aceko.infrastructure;
 
 import fr.aceko.domain.Maison;
 import fr.aceko.domain.MaisonDao;
+import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Component
 public class InMemoryMaisonDao implements MaisonDao {
 
     @Override

@@ -3,9 +3,11 @@ package fr.aceko.ui;
 import fr.aceko.application.maison.CreerMaisonRequester;
 import fr.aceko.application.maison.CreerMaisonUseCase;
 import fr.aceko.application.maison.MaisonAlreadyExistException;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component
 public class CreerMaisonUI {
 
     private final Scanner scanner;

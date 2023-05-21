@@ -2,9 +2,11 @@ package fr.aceko.application.maison;
 
 import fr.aceko.domain.Maison;
 import fr.aceko.domain.MaisonDao;
+import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
+@Component
 public class ListeMaisonUseCase {
     private final MaisonDao maisonDao;
     public ListeMaisonUseCase(MaisonDao maisonDao) {
