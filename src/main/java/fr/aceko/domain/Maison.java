@@ -67,6 +67,13 @@ public class Maison {
         return nom;
     }
 
+    public double getPrix() {
+        return prix;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
 
     @Override
     public boolean equals(Object o) {
