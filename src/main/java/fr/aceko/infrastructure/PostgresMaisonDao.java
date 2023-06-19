@@ -2,7 +2,6 @@ package fr.aceko.infrastructure;
 
 import fr.aceko.domain.Maison;
 import fr.aceko.domain.MaisonDao;
-import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
