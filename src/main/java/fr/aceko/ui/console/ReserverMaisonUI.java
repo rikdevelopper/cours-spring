@@ -1,4 +1,4 @@
-package fr.aceko.ui;
+package fr.aceko.ui.console;
 
 import fr.aceko.application.BasicUseCaseResponse;
 import fr.aceko.application.maison.ListeMaisonUseCase;

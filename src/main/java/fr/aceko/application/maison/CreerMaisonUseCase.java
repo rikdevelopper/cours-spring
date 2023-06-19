@@ -15,7 +15,7 @@ public class CreerMaisonUseCase {
     }
 
 
-    public boolean creerMaison(CreerMaisonRequester requester) throws MaisonAlreadyExistException {
+    public boolean creerMaison(CreerMaisonRequest requester) throws MaisonAlreadyExistException {
         if (this.maisonDao.exists(requester.getNom()))
             throw new MaisonAlreadyExistException("Une maison du même nom existe déjà.");
         Maison maison = new Maison(requester.getNom(), requester.getPrix(), requester.getAdresse());

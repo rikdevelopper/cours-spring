@@ -1,6 +1,6 @@
 package fr.aceko.application.maison;
 
-public class CreerMaisonRequester {
+public class CreerMaisonRequest {
     private String nom;
     private double prix;
     private String adresse;
@@ -12,8 +12,8 @@ public class CreerMaisonRequester {
     private int capaciteGarage;
     private int nbVoyageurs;
 
-    public static CreerMaisonRequester createMinimalRequester(String nom, double prix, String adresse) {
-        CreerMaisonRequester requester = new CreerMaisonRequester();
+    public static CreerMaisonRequest createMinimalRequester(String nom, double prix, String adresse) {
+        CreerMaisonRequest requester = new CreerMaisonRequest();
         requester.nom = nom;
         requester.prix = prix;
         requester.adresse = adresse;

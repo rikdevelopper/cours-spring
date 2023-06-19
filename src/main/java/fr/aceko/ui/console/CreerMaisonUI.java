@@ -1,6 +1,6 @@
-package fr.aceko.ui;
+package fr.aceko.ui.console;
 
-import fr.aceko.application.maison.CreerMaisonRequester;
+import fr.aceko.application.maison.CreerMaisonRequest;
 import fr.aceko.application.maison.CreerMaisonUseCase;
 import fr.aceko.application.maison.MaisonAlreadyExistException;
 import org.springframework.stereotype.Component;
@@ -31,7 +31,7 @@ public class CreerMaisonUI {
         viewModel.adresse = scanner.next();
         System.out.print("Enregistrement de la maison en cours..");
         try {
-            this.creerMaisonUseCase.creerMaison(CreerMaisonRequester.createMinimalRequester(viewModel.nom, viewModel.prix, viewModel.adresse));
+            this.creerMaisonUseCase.creerMaison(CreerMaisonRequest.createMinimalRequester(viewModel.nom, viewModel.prix, viewModel.adresse));
             System.out.println("Maison enregistrée.");
         } catch (MaisonAlreadyExistException e) {
             System.out.println("Une erreur est survenue lors de l'enregistrement de la maison: " + e.getMessage());

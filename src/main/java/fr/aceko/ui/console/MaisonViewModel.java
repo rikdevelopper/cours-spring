@@ -1,4 +1,4 @@
-package fr.aceko.ui;
+package fr.aceko.ui.console;
 
 public class MaisonViewModel {
     public String nom;
