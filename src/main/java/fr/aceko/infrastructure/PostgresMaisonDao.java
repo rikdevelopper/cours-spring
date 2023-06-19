@@ -4,13 +4,12 @@ import fr.aceko.domain.Maison;
 import fr.aceko.domain.MaisonDao;
 import org.springframework.stereotype.Component;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
 
-@Component
+
 public class PostgresMaisonDao implements MaisonDao {
     @Override
     public void createMaison(Maison maison) {

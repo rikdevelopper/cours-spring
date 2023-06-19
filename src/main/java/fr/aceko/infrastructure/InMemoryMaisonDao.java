@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+@Component
 public class InMemoryMaisonDao implements MaisonDao {
 
     @Override
