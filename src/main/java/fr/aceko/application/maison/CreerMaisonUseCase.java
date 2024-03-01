@@ -13,17 +13,17 @@ public class CreerMaisonUseCase {
     }
 
 
-    public boolean creerMaison(CreerMaisonRequester requester) throws MaisonAlreadyExistException {
-        if (this.maisonDao.exists(requester.getNom()))
+    public boolean creerMaison(CreerMaisonRequest request) throws MaisonAlreadyExistException {
+        if (this.maisonDao.exists(request.getNom()))
             throw new MaisonAlreadyExistException("Une maison du même nom existe déjà.");
-        Maison maison = new Maison(requester.getNom(), requester.getPrix(), requester.getAdresse());
-        maison.setCaution(requester.getCaution());
-        maison.setDescription(requester.getDescription());
-        maison.setCapaciteGarage(requester.getCapaciteGarage());
-        maison.setContactHote(requester.getContactHote());
-        maison.setNbDouche(requester.getNbDouche());
-        maison.setNbVoyageurs(requester.getNbVoyageurs());
-        maison.setNbChambre(requester.getNbChambre());
+        Maison maison = new Maison(request.getNom(), request.getPrix(), request.getAdresse());
+        maison.setCaution(request.getCaution());
+        maison.setDescription(request.getDescription());
+        maison.setCapaciteGarage(request.getCapaciteGarage());
+        maison.setContactHote(request.getContactHote());
+        maison.setNbDouche(request.getNbDouche());
+        maison.setNbVoyageurs(request.getNbVoyageurs());
+        maison.setNbChambre(request.getNbChambre());
         this.maisonDao.createMaison(maison);
         return true;
     }
